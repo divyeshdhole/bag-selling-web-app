@@ -18,7 +18,7 @@ app.get("/owners", ownersRoute);
 app.get("/products", productsRoute);
 app.get("/users", usersRoute);
 
-
+app.post("/owners", ownersRoute);
 
 
 app.listen(3000, () => {
