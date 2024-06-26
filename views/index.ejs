@@ -1,12 +1,20 @@
 <%- include('./partials/header') %>
 
-    <% if(error.length>0){ %>
-        <div class="absolute top-5 left-1/2 -translate-x-1/2 -translate-y-1/2 p-3 rounded-md bg-red-500">
-            <span class="inline-block mt-1 mb-1 text-white">
-                <%= error %>
-            </span>
+
+<% if(error.length>0){ %>
+
+    <div class="absolute top-5 left-1/2 -translate-x-1/2 -translate-y-1/2 p-3 rounded-md bg-red-500">
+        <span class="inline-block mt-1 mb-1 text-white">
+        <%= error %>
+        </span>
+    </div>
+    
+    <% } %>
+    <% if (error && error.length>0) { %>
+        <div class="alert alert-danger">
+            <%= error %>
         </div>
-        <% } %>
+    <% } %>
             <div class="w-full h-screen flex px-20">
                 <div class="w-1/2 flex items-center justify-center h-screen">
                     <div class="w-full px-32">
@@ -18,7 +26,7 @@
                                 type="text" placeholder="Full Name" name="fullname">
                             <input
                                 class="bg-zinc-100 block w-full px-3 py-2 border-[1px] rounded-md mb-3 border-zinc-200"
-                                type="email" placeholder="Email" name="email">
+                                type="email" placeholder="Email" name="username">
                             <input
                                 class="bg-zinc-100 block w-full px-3 py-2 border-[1px] rounded-md mb-3 border-zinc-200"
                                 type="password" placeholder="Password" name="password">
@@ -33,7 +41,7 @@
                         <form autocomplete="off" action="/users/login" method="post">
                             <input
                                 class="block bg-zinc-100 w-full px-3 py-2 border-[1px] rounded-md mb-3 border-zinc-200"
-                                type="email" placeholder="Email" name="email">
+                                type="email" placeholder="Email" name="username">
                             <input
                                 class="block bg-zinc-100 w-full px-3 py-2 border-[1px] rounded-md mb-3 border-zinc-200"
                                 type="password" placeholder="Password" name="password">

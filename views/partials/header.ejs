@@ -10,6 +10,22 @@
 </head>
 
 <body class="font-['helvetica_now_display']">
+    <!--if user is logged then navbar is not showing-->
+    <% var loggedin = typeof loggedin !== "undefined" ? loggedin : true%>
+    <% if (loggedin) { %>
     <nav class="w-full fixed top-0 left-0 px-5 py-3">
-        <h3 class="text-xl">Scatch</h3>
+        <!-- <h3 class="text-xl">Scatch</h3> -->
+        <div class="bg-white-800 text-black p-4">
+            <div class="container mx-auto flex justify-between items-center">
+                <a href="#" class="text-xl">Scatch</a>
+                <nav>
+                    <a href="/shop" class="mr-4">Shop</a>
+                    <a href="/cart" class="mr-4">Cart</a>
+                    <a href="#" class="mr-4">My Account</a>
+                    <a style="color: brown;" href="/users/logout">Logout</a>
+                </nav>
+            </div>
+        </div>
+    
     </nav>
+    <% } %>
